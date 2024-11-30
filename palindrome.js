@@ -5,8 +5,9 @@ const isPalindrome = function(str) {
   const lastIndex = noSpaces.length - 1;
 
   for (let i = 0; i < midIndex; i++) {
-    if (str[i] !== str[lastIndex - i]) return false;
+    if (noSpaces[i].toLowerCase() !== noSpaces[lastIndex - i].toLowerCase()) return false;
   }
+  return true;
 }
 
 // Assertion Function
@@ -31,5 +32,5 @@ assertPalindrome('fluff', false);
 assertPalindrome('just some random words', false);
 
 // Bonus / Stretch: Uncomment these tests and figure out why these are also failing
-// assertPalindrome('Kayak', true);
-// assertPalindrome('a santa at NASA', true);
+assertPalindrome('Kayak', true);
+assertPalindrome('a santa at NASA', true);
